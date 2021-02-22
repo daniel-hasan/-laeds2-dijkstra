@@ -45,13 +45,13 @@ class TestHeap(unittest.TestCase):
         for val_inserir in arr_test:
             objHeap = MinHeap()
             objHeap.insere(val_inserir)
-            self.assertListEqual([None,val_inserir],objHeap.arr_heap,f"Inserção incorreta ao inserir o valor {val_inserir} no heap {[None,12,9,6,4,3,5,2,1]}, esperado: {[None,val_inserir]} obtido: {objHeap.arr_heap}")
+            self.assertListEqual([None,val_inserir],objHeap.arr_heap,f"Inserção incorreta ao inserir o valor {val_inserir} no heap vazio, esperado: {[None,val_inserir]} obtido: {objHeap.arr_heap}")
 
         for i,val_inserir in enumerate(arr_test):
             objHeap = MinHeap()
             objHeap.arr_heap = [None,-12,-9,-6,-4,-3,-5,-2,-1]
             objHeap.insere(val_inserir)
-            self.assertListEqual(arr_heap_esperado[i],objHeap.arr_heap,f"Inserção incorreta ao inserir o valor {val_inserir} no heap {[None,12,9,6,4,3,5,2,1]}, esperado: {arr_heap_esperado[i]} obtido: {objHeap.arr_heap}")
+            self.assertListEqual(arr_heap_esperado[i],objHeap.arr_heap,f"Inserção incorreta ao inserir o valor {val_inserir} no heap {[None,-12,-9,-6,-4,-3,-5,-2,-1]}, esperado: {arr_heap_esperado[i]} obtido: {objHeap.arr_heap}")
 
 
     def test_retira_min(self):
